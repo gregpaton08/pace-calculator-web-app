@@ -3,72 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <title>Running Pace Calculator</title>
-    <style>
-      /* Add some basic styling to make the page look good */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      h1 {
-        text-align: center;
-      }
-      form {
-        max-width: 500px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #f1f1f1;
-        border-radius: 10px;
-      }
-      label {
-        display: block;
-        margin-bottom: 10px;
-        font-weight: bold;
-      }
-      input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        margin-bottom: 20px;
-      }
-      input[type='number'] {
-        -moz-appearance:textfield;
-        width: 100%;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        margin-bottom: 20px;
-      }
-      input[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      input[type="submit"]:hover {
-        background-color: #3e8e41;
-      }
-      input:invalid {
-        border: red solid 3px;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    
   </head>
   <body>
     <h1>Running Pace Calculator</h1>
     <form>
       <label for="distance">Distance (in miles):</label>
       <input type="text" id="distance" name="distance" placeholder="Enter distance..." inputmode="decimal">
-      <label for="time">Time (in minutes):</label>
-      <div>
-        <input type="number" id="hours" name="hours" placeholder="hours" inputmode="numeric">
-        <input type="number" id="minutes" name="minutes" placeholder="minutes" inputmode="numeric">
-        <input type="number" id="seconds" name="seconds" placeholder="seconds" inputmode="numeric">
+      <div class="input-section">
+        <label for="time">Time:</label>
+        <div class="input-row">
+          <input type="number" id="hours" name="hours" placeholder="hour" inputmode="numeric">
+          <span>:</span>
+          <input type="number" id="minutes" name="minutes" placeholder="min" inputmode="numeric">
+          <span>:</span>
+          <input type="number" id="seconds" name="seconds" placeholder="sec" inputmode="numeric">
+        </div>
       </div>
-      <label for="pace">Pace (in minutes/mile):</label>
-      <input type="text" id="pace" name="pace" placeholder="Enter pace...">
+      <label for="pace">Pace:</label>
+      <input type="text" pattern="([0-5]?[0-9]):([0-5][0-9])" id="pace" name="pace" placeholder="Enter pace...">
       <input type="submit" value="Calculate">
     </form>
     <script src="pace-calculator.js"></script>

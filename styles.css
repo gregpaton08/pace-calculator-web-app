@@ -1,0 +1,65 @@
+/* Add some basic styling to make the page look good */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+}
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+}
+input[type='number'] {
+  -moz-appearance:textfield;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+}
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+input:invalid {
+  border: red solid 3px;
+}
+.input-row {
+  display: flex; /* Use flexbox to align inputs in a row */
+  padding-bottom: 15px;
+}
+.input-row input {
+    /* flex: 1; */
+    /* margin-right: 10px; */
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+    margin: 0 5px;
+}
+.input-row span {
+  font-size: 20px;
+}
