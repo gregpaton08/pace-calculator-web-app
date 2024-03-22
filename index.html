@@ -1,37 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Pace Calculator</title>
-	<script>
-		function calculatePace() {
-			var time = document.getElementById("time").value;
-			var distance = document.getElementById("distance").value;
-			var pace = time / distance;
-
-			if (document.getElementById("km").checked) {
-				pace *= 1.60934;
-			}
-
-			var minutes = Math.floor(pace);
-			var seconds = Math.floor((pace - minutes) * 60);
-
-			document.getElementById("pace").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-		}
-	</script>
-</head>
-<body>
-	<h1>Pace Calculator</h1>
-	<form>
-		<label for="time">Time (in minutes):</label>
-		<input type="number" id="time" name="time" min="1" required><br><br>
-		<label for="distance">Distance:</label>
-		<input type="number" id="distance" name="distance" min="1" required>
-		<input type="radio" id="miles" name="unit" value="miles" checked>
-		<label for="miles">Miles</label>
-		<input type="radio" id="km" name="unit" value="km">
-		<label for="km">Kilometers</label><br><br>
-		<button type="button" onclick="calculatePace()">Calculate Pace</button>
-	</form>
-	<p>Your pace is: <span id="pace"></span> per mile/kilometer.</p>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Running Pace Calculator</title>
+    <style>
+      /* Add some basic styling to make the page look good */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f1f1f1;
+        border-radius: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+      }
+      input[type='number'] {
+        -moz-appearance:textfield;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      input:invalid {
+        border: red solid 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Running Pace Calculator</h1>
+    <form>
+      <label for="distance">Distance (in miles):</label>
+      <input type="text" id="distance" name="distance" placeholder="Enter distance..." inputmode="decimal">
+      <label for="time">Time (in minutes):</label>
+      <div>
+        <input type="number" id="hours" name="hours" placeholder="hours" inputmode="numeric">
+        <input type="number" id="minutes" name="minutes" placeholder="minutes" inputmode="numeric">
+        <input type="number" id="seconds" name="seconds" placeholder="seconds" inputmode="numeric">
+      </div>
+      <label for="pace">Pace (in minutes/mile):</label>
+      <input type="text" id="pace" name="pace" placeholder="Enter pace...">
+      <input type="submit" value="Calculate">
+    </form>
+    <script src="pace-calculator.js"></script>
+  </body>
 </html>
