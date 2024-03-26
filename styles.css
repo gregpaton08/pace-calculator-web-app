@@ -42,6 +42,14 @@ input[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
 }
+/* input[type="text"],
+input[type="number"],
+input[type="submit"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+} */
 input[type="submit"]:hover {
   background-color: #3e8e41;
 }
