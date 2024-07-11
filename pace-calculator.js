@@ -180,3 +180,14 @@ function calculateTimeOnPaceChange(event) {
 
 const paceInput = document.querySelector("#pace")
 paceInput.addEventListener("input", calculateTimeOnPaceChange)
+
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.button');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      buttons.forEach(btn => btn.classList.remove('selected'));
+      this.classList.add('selected');
+    });
+  });
+});
